@@ -3,5 +3,12 @@ name = "Eucalypt-Userland"
 version = "0.1.0"
 edition = "2024"
 
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+
 [dependencies]
-limine = "0.5.0"
+once_cell = { version = "1.19", default-features = false, features = ["critical-section"] }

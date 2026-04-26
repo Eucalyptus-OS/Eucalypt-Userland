@@ -1,0 +1,91 @@
+[
+  {
+    "file": "libc/stdio.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-mno-red-zone",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-m64",
+      "-I",
+      "libc/include",
+      "-c",
+      "libc/stdio.c",
+      "-o",
+      "build/stdio.o"
+    ],
+    "directory": "/home/gavin/repos/Eucalypt-Userland/libs",
+    "output": "build/stdio.o"
+  },
+  {
+    "file": "libc/stdlib.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-mno-red-zone",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-m64",
+      "-I",
+      "libc/include",
+      "-c",
+      "libc/stdlib.c",
+      "-o",
+      "build/stdlib.o"
+    ],
+    "directory": "/home/gavin/repos/Eucalypt-Userland/libs",
+    "output": "build/stdlib.o"
+  },
+  {
+    "file": "libc/string.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-mno-red-zone",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-m64",
+      "-I",
+      "libc/include",
+      "-c",
+      "libc/string.c",
+      "-o",
+      "build/string.o"
+    ],
+    "directory": "/home/gavin/repos/Eucalypt-Userland/libs",
+    "output": "build/string.o"
+  },
+  {
+    "file": "src/main.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-std=c23",
+      "-mno-red-zone",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-m64",
+      "-I",
+      "libs/libc/include",
+      "-c",
+      "src/main.c",
+      "-o",
+      "build/main.o"
+    ],
+    "directory": "/home/gavin/repos/Eucalypt-Userland",
+    "output": "build/main.o"
+  }
+]

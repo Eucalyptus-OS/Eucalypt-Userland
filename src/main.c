@@ -33,6 +33,6 @@ void main() {
     wm_focus(&wm, dialog);
 
     wm_draw_all(&wm);
-
+    
     while (1) {}
 }

@@ -1,3 +1,6 @@
+#include <string.h>
+
+// Get the length of a string
 int strlen(const char *str) {
     int i = 0;
     while (*str) {
@@ -7,12 +10,14 @@ int strlen(const char *str) {
     return i;
 }
 
+// Copy a string from src to dest
 char *strcpy(char *dest, const char *src) {
     char *d = dest;
     while ((*d++ = *src++));
     return dest;
 }
 
+// Copy a string from src to dest, up to n characters
 char *strncpy(char *dest, const char *src, int n) {
     char *d = dest;
     while (n-- && (*d++ = *src++));
@@ -20,6 +25,7 @@ char *strncpy(char *dest, const char *src, int n) {
     return dest;
 }
 
+// Concatenate a string from src to dest
 char *strcat(char *dest, const char *src) {
     char *d = dest;
     while (*d) d++;

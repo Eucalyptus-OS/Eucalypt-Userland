@@ -1,6 +1,7 @@
 #include <syscalls.h>
 #include <stddef.h>
 #include <stdatomic.h>
+#include <stdlib.h>
 
 typedef struct block {
     uint64_t size;
@@ -18,6 +19,7 @@ static inline void spinlock_release(void) {
     atomic_flag_clear_explicit(&lock, memory_order_release);
 }
 
+// Request memory from the heap
 void *malloc(uint64_t size) {
     if (size == 0) return nullptr;
     size = (size + 15) & ~15ULL;
@@ -35,16 +37,20 @@ void *malloc(uint64_t size) {
         curr = &(*curr)->next;
     }
 
-    // nothing in free list, ask kernel
     block_t *blk = sbrk(sizeof(block_t) + size);
-    spinlock_release();
+    if (blk == (void *)-1) {
+        spinlock_release();
+        return nullptr;
+    }
 
-    if (blk == (void *)-1) return nullptr;
     blk->size = size;
     blk->next = nullptr;
+
+    spinlock_release();
     return (void *)(blk + 1);
 }
 
+// Free requested memory
 void free(void *ptr) {
     if (ptr == nullptr) return;
     block_t *blk = (block_t *)ptr - 1;

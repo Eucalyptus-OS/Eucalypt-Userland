@@ -66,6 +66,32 @@
     "output": "build/string.o"
   },
   {
+    "file": "src/display.c",
+    "arguments": [
+      "/usr/bin/gcc",
+      "-ffreestanding",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-std=c23",
+      "-mno-red-zone",
+      "-nostdinc",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-m64",
+      "-I",
+      "src/include",
+      "-I",
+      "libs/libc/include",
+      "-c",
+      "src/display.c",
+      "-o",
+      "build/display.o"
+    ],
+    "directory": "/home/gavin/repos/Eucalypt-Userland",
+    "output": "build/display.o"
+  },
+  {
     "file": "src/main.c",
     "arguments": [
       "/usr/bin/gcc",
@@ -74,10 +100,13 @@
       "-fno-pic",
       "-std=c23",
       "-mno-red-zone",
+      "-nostdinc",
       "-O2",
       "-Wall",
       "-Wextra",
       "-m64",
+      "-I",
+      "src/include",
       "-I",
       "libs/libc/include",
       "-c",

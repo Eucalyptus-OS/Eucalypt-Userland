@@ -10,10 +10,13 @@ CFLAGS := \
     -std=c23 \
     -mno-red-zone \
     -nostdlib \
+    -nostdinc \
+    -nodefaultlibs \
     -O2 \
     -Wall \
     -Wextra \
     -m64 \
+    -I src/include \
     -I libs/libc/include
 
 LDFLAGS := \

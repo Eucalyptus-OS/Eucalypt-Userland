@@ -74,8 +74,10 @@ window_t *wm_open(wm_t *wm, const char *title,
     win->width    = w;
     win->height   = h;
     win->bg_color = bg;
-    win->visible  = 1;
-    win->focused  = 0;
+    win->visible       = 1;
+    win->focused       = 0;
+    win->on_key_press  = (key_handler_t)0;
+    win->on_key_release = (key_handler_t)0;
     win->next     = NULL;
     win->prev     = wm->tail;
     str_copy(win->title, title, WINDOW_TITLE_MAX);
@@ -209,4 +211,23 @@ void wm_draw_all(wm_t *wm) {
 
     // taskbar on top of everything
     draw_taskbar(wm);
+}
+/* --- event dispatch -------------------------------------------------------- */
+
+void wm_dispatch_event(wm_t *wm, const input_event_t *ev) {
+    window_t *w = wm->focused;
+    if (!w) return;
+
+    switch (ev->kind) {
+    case EVENT_KEY_PRESS:
+        if (w->on_key_press)
+            w->on_key_press(w, ev->code, ev->scancode, ev->modifiers);
+        break;
+    case EVENT_KEY_RELEASE:
+        if (w->on_key_release)
+            w->on_key_release(w, ev->code, ev->scancode, ev->modifiers);
+        break;
+    default:
+        break;
+    }
 }

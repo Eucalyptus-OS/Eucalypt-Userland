@@ -11,6 +11,10 @@ static inline void put_pixel(uint32_t x, uint32_t y, uint32_t c) {
     fb_ptr[y * (fb_pitch / 4) + x] = c;
 }
 
+static inline uint32_t get_pixel(uint32_t x, uint32_t y) {
+    return fb_ptr[y * (fb_pitch / 4) + x];
+}
+
 static inline int abs_i(int v) { return v < 0 ? -v : v; }
 
 fb_error init_display() {
@@ -36,6 +40,12 @@ fb_error draw_pixel(uint32_t x, uint32_t y, uint32_t c) {
     return OK;
 }
 
+uint32_t read_pixel(uint32_t x, uint32_t y) {
+    if (x >= fb_width || y >= fb_height)
+        return 0;
+    return get_pixel(x, y);
+}
+
 fb_error draw_rect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint32_t c) {
     if (x >= fb_width || y >= fb_height) return FAILED_TO_DRAW;
     uint32_t x_end = (x + width  > fb_width)  ? fb_width  : x + width;
@@ -48,12 +58,10 @@ fb_error draw_rect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint
 
 fb_error draw_rect_outline(uint32_t x, uint32_t y, uint32_t width, uint32_t height,
                             uint32_t thickness, uint32_t c) {
-    // top / bottom
-    draw_rect(x, y,                    width,     thickness, c);
-    draw_rect(x, y + height - thickness, width,   thickness, c);
-    // left / right (inset to avoid overdrawing corners)
-    draw_rect(x,                   y + thickness, thickness, height - thickness * 2, c);
-    draw_rect(x + width - thickness, y + thickness, thickness, height - thickness * 2, c);
+    draw_rect(x, y,                      width,     thickness, c);
+    draw_rect(x, y + height - thickness, width,     thickness, c);
+    draw_rect(x,                         y + thickness, thickness, height - thickness * 2, c);
+    draw_rect(x + width - thickness,     y + thickness, thickness, height - thickness * 2, c);
     return OK;
 }
 
@@ -88,7 +96,6 @@ fb_error draw_circle(uint32_t cx, uint32_t cy, uint32_t radius, uint32_t c) {
 fb_error draw_circle_outline(uint32_t cx, uint32_t cy, uint32_t radius, uint32_t c) {
     int x = 0, y = (int)radius, d = 1 - (int)radius;
 
-    // plots 8 symmetric points
     #define PLOT8(px, py) do { \
         draw_pixel(cx+(px), cy+(py), c); draw_pixel(cx-(px), cy+(py), c); \
         draw_pixel(cx+(px), cy-(py), c); draw_pixel(cx-(px), cy-(py), c); \

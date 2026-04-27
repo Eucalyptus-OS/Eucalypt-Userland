@@ -15,6 +15,7 @@ fb_error init_display();
 uint32_t color(uint8_t r, uint8_t g, uint8_t b);
 
 fb_error draw_pixel(uint32_t x, uint32_t y, uint32_t color);
+uint32_t read_pixel(uint32_t x, uint32_t y);
 fb_error draw_rect(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint32_t color);
 fb_error draw_rect_outline(uint32_t x, uint32_t y, uint32_t width, uint32_t height, uint32_t thickness, uint32_t color);
 fb_error draw_line(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2, uint32_t color);

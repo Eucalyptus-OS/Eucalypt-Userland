@@ -7,7 +7,7 @@ CFLAGS := \
     -fno-stack-protector \
     -fno-pic \
     -no-pie \
-    -std=c23 \
+    -std=gnu23 \
     -mno-red-zone \
     -nostdlib \
     -nostdinc \
@@ -17,22 +17,31 @@ CFLAGS := \
     -Wextra \
     -m64 \
     -I src/include \
-    -I libs/libc/include
+    -I libs/libc/include \
+    -I libs/display/include \
+    -I libs/wm/include \
+    -I libs/cursor/include \
+    -I libs/compositor/include
 
 LDFLAGS := \
     -nostdlib \
     -static \
     -T link.ld
 
-SRC_DIR   := src
-BUILD_DIR := build
-LIBS_DIR  := libs
+SRC_DIR        := src
+BUILD_DIR      := build
+LIBS_DIR       := libs
+LIBS_BUILD_DIR := libs/build
 
 SRCS := $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
-LIBC := $(LIBS_DIR)/libc.a
-CRT  := $(LIBS_DIR)/crt.o
+LIBC       := $(LIBS_BUILD_DIR)/libc/liblibc.a
+LIBDISPLAY := $(LIBS_BUILD_DIR)/display/libdisplay.a
+LIBWM      := $(LIBS_BUILD_DIR)/wm/libwm.a
+LIBCURSOR      := $(LIBS_BUILD_DIR)/cursor/libcursor.a
+LIBCOMPOSITOR := $(LIBS_BUILD_DIR)/compositor/libcompositor.a
+CRT        := $(LIBS_BUILD_DIR)/libc/CMakeFiles/crt.dir/__/crt/crt.asm.o
 
 TARGET := USER
 
@@ -40,8 +49,11 @@ TARGET := USER
 
 all: libs $(BUILD_DIR) $(TARGET)
 
-libs:
-	$(MAKE) -C $(LIBS_DIR)
+libs: $(LIBS_BUILD_DIR)
+	cmake --build $(LIBS_BUILD_DIR) -j$(shell nproc)
+
+$(LIBS_BUILD_DIR):
+	cmake -S $(LIBS_DIR) -B $(LIBS_BUILD_DIR)
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
@@ -49,9 +61,8 @@ $(BUILD_DIR):
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(TARGET): $(CRT) $(OBJS) $(LIBC)
-	$(LD) $(LDFLAGS) -o $@ $(CRT) $(OBJS) $(LIBC)
+$(TARGET): $(CRT) $(OBJS) $(LIBWM) $(LIBCURSOR) $(LIBDISPLAY) $(LIBCOMPOSITOR) $(LIBC)
+	$(LD) $(LDFLAGS) -o $@ $(CRT) $(OBJS) $(LIBWM) $(LIBCURSOR) $(LIBDISPLAY) $(LIBCOMPOSITOR) $(LIBC)
 
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET)
-	$(MAKE) -C $(LIBS_DIR) clean
+	rm -rf $(BUILD_DIR) $(LIBS_BUILD_DIR) $(TARGET)

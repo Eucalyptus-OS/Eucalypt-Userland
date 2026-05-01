@@ -1,7 +1,6 @@
 #pragma once
 #include <stdint.h>
 
-/* Event kind - must match kernel EventKind (ps_2_devices/src/event.rs) */
 #define EVENT_NONE        0
 #define EVENT_KEY_PRESS   1
 #define EVENT_KEY_RELEASE 2

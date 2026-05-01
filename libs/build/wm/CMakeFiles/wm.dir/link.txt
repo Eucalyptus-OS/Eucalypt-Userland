@@ -1,0 +1,2 @@
+/usr/bin/ar qc libwm.a CMakeFiles/wm.dir/src/window.c.o
+/usr/bin/ranlib libwm.a

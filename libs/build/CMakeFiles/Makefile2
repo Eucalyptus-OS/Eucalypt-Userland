@@ -65,33 +65,33 @@ CMAKE_BINARY_DIR = /home/gavin/repos/Eucalypt-Userland/libs/build
 # The main recursive "all" target.
 all: libc/all
 all: display/all
-all: wm/all
 all: cursor/all
 all: compositor/all
+all: term/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: libc/codegen
 codegen: display/codegen
-codegen: wm/codegen
 codegen: cursor/codegen
 codegen: compositor/codegen
+codegen: term/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
 preinstall: libc/preinstall
 preinstall: display/preinstall
-preinstall: wm/preinstall
 preinstall: cursor/preinstall
 preinstall: compositor/preinstall
+preinstall: term/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: libc/clean
 clean: display/clean
-clean: wm/clean
 clean: cursor/clean
 clean: compositor/clean
+clean: term/clean
 .PHONY : clean
 
 #=============================================================================
@@ -174,23 +174,23 @@ libc/clean: libc/CMakeFiles/crt.dir/clean
 .PHONY : libc/clean
 
 #=============================================================================
-# Directory level rules for directory wm
+# Directory level rules for directory term
 
 # Recursive "all" directory target.
-wm/all: wm/CMakeFiles/wm.dir/all
-.PHONY : wm/all
+term/all: term/CMakeFiles/term.dir/all
+.PHONY : term/all
 
 # Recursive "codegen" directory target.
-wm/codegen: wm/CMakeFiles/wm.dir/codegen
-.PHONY : wm/codegen
+term/codegen: term/CMakeFiles/term.dir/codegen
+.PHONY : term/codegen
 
 # Recursive "preinstall" directory target.
-wm/preinstall:
-.PHONY : wm/preinstall
+term/preinstall:
+.PHONY : term/preinstall
 
 # Recursive "clean" directory target.
-wm/clean: wm/CMakeFiles/wm.dir/clean
-.PHONY : wm/clean
+term/clean: term/CMakeFiles/term.dir/clean
+.PHONY : term/clean
 
 #=============================================================================
 # Target rules for target libc/CMakeFiles/libc.dir
@@ -199,7 +199,7 @@ wm/clean: wm/CMakeFiles/wm.dir/clean
 libc/CMakeFiles/libc.dir/all:
 	$(MAKE) $(MAKESILENT) -f libc/CMakeFiles/libc.dir/build.make libc/CMakeFiles/libc.dir/depend
 	$(MAKE) $(MAKESILENT) -f libc/CMakeFiles/libc.dir/build.make libc/CMakeFiles/libc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=8,9,10,11 "Built target libc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=9,10,11,12 "Built target libc"
 .PHONY : libc/CMakeFiles/libc.dir/all
 
 # Build rule for subdir invocation for target.
@@ -216,7 +216,7 @@ libc: libc/CMakeFiles/libc.dir/rule
 # codegen rule for target.
 libc/CMakeFiles/libc.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f libc/CMakeFiles/libc.dir/build.make libc/CMakeFiles/libc.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=8,9,10,11 "Finished codegen for target libc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=9,10,11,12 "Finished codegen for target libc"
 .PHONY : libc/CMakeFiles/libc.dir/codegen
 
 # clean rule for target.
@@ -231,7 +231,7 @@ libc/CMakeFiles/libc.dir/clean:
 libc/CMakeFiles/crt.dir/all:
 	$(MAKE) $(MAKESILENT) -f libc/CMakeFiles/crt.dir/build.make libc/CMakeFiles/crt.dir/depend
 	$(MAKE) $(MAKESILENT) -f libc/CMakeFiles/crt.dir/build.make libc/CMakeFiles/crt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=3 "Built target crt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=4 "Built target crt"
 .PHONY : libc/CMakeFiles/crt.dir/all
 
 # Build rule for subdir invocation for target.
@@ -248,7 +248,7 @@ crt: libc/CMakeFiles/crt.dir/rule
 # codegen rule for target.
 libc/CMakeFiles/crt.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f libc/CMakeFiles/crt.dir/build.make libc/CMakeFiles/crt.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=3 "Finished codegen for target crt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=4 "Finished codegen for target crt"
 .PHONY : libc/CMakeFiles/crt.dir/codegen
 
 # clean rule for target.
@@ -263,7 +263,7 @@ libc/CMakeFiles/crt.dir/clean:
 display/CMakeFiles/display.dir/all: libc/CMakeFiles/libc.dir/all
 	$(MAKE) $(MAKESILENT) -f display/CMakeFiles/display.dir/build.make display/CMakeFiles/display.dir/depend
 	$(MAKE) $(MAKESILENT) -f display/CMakeFiles/display.dir/build.make display/CMakeFiles/display.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=6,7 "Built target display"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=7,8 "Built target display"
 .PHONY : display/CMakeFiles/display.dir/all
 
 # Build rule for subdir invocation for target.
@@ -280,47 +280,13 @@ display: display/CMakeFiles/display.dir/rule
 # codegen rule for target.
 display/CMakeFiles/display.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f display/CMakeFiles/display.dir/build.make display/CMakeFiles/display.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=6,7 "Finished codegen for target display"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=7,8 "Finished codegen for target display"
 .PHONY : display/CMakeFiles/display.dir/codegen
 
 # clean rule for target.
 display/CMakeFiles/display.dir/clean:
 	$(MAKE) $(MAKESILENT) -f display/CMakeFiles/display.dir/build.make display/CMakeFiles/display.dir/clean
 .PHONY : display/CMakeFiles/display.dir/clean
-
-#=============================================================================
-# Target rules for target wm/CMakeFiles/wm.dir
-
-# All Build rule for target.
-wm/CMakeFiles/wm.dir/all: libc/CMakeFiles/libc.dir/all
-wm/CMakeFiles/wm.dir/all: display/CMakeFiles/display.dir/all
-wm/CMakeFiles/wm.dir/all: cursor/CMakeFiles/cursor.dir/all
-	$(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/depend
-	$(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=12,13 "Built target wm"
-.PHONY : wm/CMakeFiles/wm.dir/all
-
-# Build rule for subdir invocation for target.
-wm/CMakeFiles/wm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 10
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm/CMakeFiles/wm.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 0
-.PHONY : wm/CMakeFiles/wm.dir/rule
-
-# Convenience name for target.
-wm: wm/CMakeFiles/wm.dir/rule
-.PHONY : wm
-
-# codegen rule for target.
-wm/CMakeFiles/wm.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=12,13 "Finished codegen for target wm"
-.PHONY : wm/CMakeFiles/wm.dir/codegen
-
-# clean rule for target.
-wm/CMakeFiles/wm.dir/clean:
-	$(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/clean
-.PHONY : wm/CMakeFiles/wm.dir/clean
 
 #=============================================================================
 # Target rules for target cursor/CMakeFiles/cursor.dir
@@ -330,7 +296,7 @@ cursor/CMakeFiles/cursor.dir/all: libc/CMakeFiles/libc.dir/all
 cursor/CMakeFiles/cursor.dir/all: display/CMakeFiles/display.dir/all
 	$(MAKE) $(MAKESILENT) -f cursor/CMakeFiles/cursor.dir/build.make cursor/CMakeFiles/cursor.dir/depend
 	$(MAKE) $(MAKESILENT) -f cursor/CMakeFiles/cursor.dir/build.make cursor/CMakeFiles/cursor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=4,5 "Built target cursor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=5,6 "Built target cursor"
 .PHONY : cursor/CMakeFiles/cursor.dir/all
 
 # Build rule for subdir invocation for target.
@@ -347,7 +313,7 @@ cursor: cursor/CMakeFiles/cursor.dir/rule
 # codegen rule for target.
 cursor/CMakeFiles/cursor.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f cursor/CMakeFiles/cursor.dir/build.make cursor/CMakeFiles/cursor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=4,5 "Finished codegen for target cursor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=5,6 "Finished codegen for target cursor"
 .PHONY : cursor/CMakeFiles/cursor.dir/codegen
 
 # clean rule for target.
@@ -363,12 +329,12 @@ compositor/CMakeFiles/compositor.dir/all: libc/CMakeFiles/libc.dir/all
 compositor/CMakeFiles/compositor.dir/all: display/CMakeFiles/display.dir/all
 	$(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/depend
 	$(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=1,2 "Built target compositor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=1,2,3 "Built target compositor"
 .PHONY : compositor/CMakeFiles/compositor.dir/all
 
 # Build rule for subdir invocation for target.
 compositor/CMakeFiles/compositor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compositor/CMakeFiles/compositor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 0
 .PHONY : compositor/CMakeFiles/compositor.dir/rule
@@ -380,13 +346,46 @@ compositor: compositor/CMakeFiles/compositor.dir/rule
 # codegen rule for target.
 compositor/CMakeFiles/compositor.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=1,2 "Finished codegen for target compositor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target compositor"
 .PHONY : compositor/CMakeFiles/compositor.dir/codegen
 
 # clean rule for target.
 compositor/CMakeFiles/compositor.dir/clean:
 	$(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/clean
 .PHONY : compositor/CMakeFiles/compositor.dir/clean
+
+#=============================================================================
+# Target rules for target term/CMakeFiles/term.dir
+
+# All Build rule for target.
+term/CMakeFiles/term.dir/all: libc/CMakeFiles/libc.dir/all
+term/CMakeFiles/term.dir/all: display/CMakeFiles/display.dir/all
+	$(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/depend
+	$(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=13,14 "Built target term"
+.PHONY : term/CMakeFiles/term.dir/all
+
+# Build rule for subdir invocation for target.
+term/CMakeFiles/term.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term/CMakeFiles/term.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 0
+.PHONY : term/CMakeFiles/term.dir/rule
+
+# Convenience name for target.
+term: term/CMakeFiles/term.dir/rule
+.PHONY : term
+
+# codegen rule for target.
+term/CMakeFiles/term.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=13,14 "Finished codegen for target term"
+.PHONY : term/CMakeFiles/term.dir/codegen
+
+# clean rule for target.
+term/CMakeFiles/term.dir/clean:
+	$(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/clean
+.PHONY : term/CMakeFiles/term.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

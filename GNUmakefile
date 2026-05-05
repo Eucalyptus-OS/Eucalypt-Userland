@@ -19,9 +19,9 @@ CFLAGS := \
     -I src/include \
     -I libs/libc/include \
     -I libs/display/include \
-    -I libs/wm/include \
     -I libs/cursor/include \
-    -I libs/compositor/include
+    -I libs/compositor/include \
+    -I libs/term/include
 
 LDFLAGS := \
     -nostdlib \
@@ -38,9 +38,9 @@ OBJS := $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRCS))
 
 LIBC       := $(LIBS_BUILD_DIR)/libc/liblibc.a
 LIBDISPLAY := $(LIBS_BUILD_DIR)/display/libdisplay.a
-LIBWM      := $(LIBS_BUILD_DIR)/wm/libwm.a
 LIBCURSOR      := $(LIBS_BUILD_DIR)/cursor/libcursor.a
 LIBCOMPOSITOR := $(LIBS_BUILD_DIR)/compositor/libcompositor.a
+LIBTERM      := $(LIBS_BUILD_DIR)/term/libterm.a
 CRT        := $(LIBS_BUILD_DIR)/libc/CMakeFiles/crt.dir/__/crt/crt.asm.o
 
 TARGET := USER
@@ -61,8 +61,8 @@ $(BUILD_DIR):
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(TARGET): $(CRT) $(OBJS) $(LIBWM) $(LIBCURSOR) $(LIBDISPLAY) $(LIBCOMPOSITOR) $(LIBC)
-	$(LD) $(LDFLAGS) -o $@ $(CRT) $(OBJS) $(LIBWM) $(LIBCURSOR) $(LIBDISPLAY) $(LIBCOMPOSITOR) $(LIBC)
+$(TARGET): $(CRT) $(OBJS) $(LIBCURSOR) $(LIBDISPLAY) $(LIBCOMPOSITOR) $(LIBTERM) $(LIBC)
+	$(LD) $(LDFLAGS) -o $@ $(CRT) $(OBJS) $(LIBCURSOR) $(LIBDISPLAY) $(LIBCOMPOSITOR) $(LIBTERM) $(LIBC)
 
 clean:
 	rm -rf $(BUILD_DIR) $(LIBS_BUILD_DIR) $(TARGET)

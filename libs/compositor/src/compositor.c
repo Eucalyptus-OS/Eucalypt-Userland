@@ -4,9 +4,13 @@
 #include <display.h>
 #include <compositor.h>
 
+uint32_t rgb(uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
+    return ((a << 24) | (b << 16) | (g << 8) | r);
+}
+
 context_t *context_new(uint32_t *buffer, uint32_t width,
                         uint32_t height, uint32_t pitch) {
-    context_t *ctx = malloc(sizeof(*ctx));
+    context_t *ctx = malloc(sizeof(struct context));
     if (!ctx) return NULL;
     ctx->buffer = buffer;
     ctx->width  = width;
@@ -32,19 +36,17 @@ void context_fill_rect(context_t *ctx, uint32_t x, uint32_t y,
     }
 }
 
-uint8_t pseudo_rand_8(void) {
-    static uint16_t seed = 1;
-    seed = (uint16_t)(12657u * seed + 12345u);
-    return (uint8_t)(seed >> 8);
+void context_put_pixel(context_t *ctx, uint32_t x, uint32_t y, uint32_t color) {
+    if (!ctx || !ctx->buffer) return;
+    if (x >= ctx->width || y >= ctx->height) return;
+
+    uint32_t stride = ctx->pitch / sizeof(uint32_t);
+    uint32_t *line = ctx->buffer + y * stride;
+    line[x] = color;
 }
 
-void window_paint(window_t *win) {
+void window_paint(window_t *win, uint32_t color) {
     if (!win || !win->context) return;
-
-    uint32_t color = ((uint32_t)0xFF           << 24) |  /* A */
-                     ((uint32_t)pseudo_rand_8() << 16) |  /* B */
-                     ((uint32_t)pseudo_rand_8() <<  8) |  /* G */
-                      (uint32_t)pseudo_rand_8();           /* R */
 
     context_fill_rect(win->context, win->x, win->y,
                       win->width, win->height, color);
@@ -53,7 +55,7 @@ void window_paint(window_t *win) {
 window_t *window_new(uint16_t x, uint16_t y,
                      uint16_t width, uint16_t height,
                      context_t *context) {
-    window_t *win = malloc(sizeof(*win));
+    window_t *win = malloc(sizeof(struct window));
     if (!win) return NULL;
 
     win->x       = x;

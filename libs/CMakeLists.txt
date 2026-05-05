@@ -5,6 +5,6 @@ set(CMAKE_C_STANDARD 23)
 
 add_subdirectory(libc)
 add_subdirectory(display)
-add_subdirectory(wm)
 add_subdirectory(cursor)
 add_subdirectory(compositor)
+add_subdirectory(term)

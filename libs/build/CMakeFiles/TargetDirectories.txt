@@ -7,12 +7,12 @@
 /home/gavin/repos/Eucalypt-Userland/libs/build/display/CMakeFiles/display.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/display/CMakeFiles/edit_cache.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/display/CMakeFiles/rebuild_cache.dir
-/home/gavin/repos/Eucalypt-Userland/libs/build/wm/CMakeFiles/wm.dir
-/home/gavin/repos/Eucalypt-Userland/libs/build/wm/CMakeFiles/edit_cache.dir
-/home/gavin/repos/Eucalypt-Userland/libs/build/wm/CMakeFiles/rebuild_cache.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/cursor/CMakeFiles/cursor.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/cursor/CMakeFiles/edit_cache.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/cursor/CMakeFiles/rebuild_cache.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/compositor/CMakeFiles/compositor.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/compositor/CMakeFiles/edit_cache.dir
 /home/gavin/repos/Eucalypt-Userland/libs/build/compositor/CMakeFiles/rebuild_cache.dir
+/home/gavin/repos/Eucalypt-Userland/libs/build/term/CMakeFiles/term.dir
+/home/gavin/repos/Eucalypt-Userland/libs/build/term/CMakeFiles/edit_cache.dir
+/home/gavin/repos/Eucalypt-Userland/libs/build/term/CMakeFiles/rebuild_cache.dir

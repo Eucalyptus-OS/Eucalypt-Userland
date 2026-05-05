@@ -1,6 +1,7 @@
 #pragma once
 
 #include "syscalls.h"
+#include "stddef.h"
 
 #define O_RDONLY 0x0000
 #define O_WRONLY 0x0001
@@ -12,6 +13,14 @@
 
 static inline int vfs_open(const char *path, int flags, int mode) {
     return open(path, flags, mode);
+}
+
+static inline int vfs_read(int fd, void *buf, size_t count) {
+    return read(fd, buf, count);
+}
+
+static inline int vfs_write(int fd, const void *buf, size_t count) {
+    return write(fd, buf, count);
 }
 
 static inline int vfs_close(int fd) {

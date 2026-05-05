@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/compositor.dir/src/compositor.c.o"
   "CMakeFiles/compositor.dir/src/compositor.c.o.d"
+  "CMakeFiles/compositor.dir/src/font_renderer.c.o"
+  "CMakeFiles/compositor.dir/src/font_renderer.c.o.d"
   "libcompositor.a"
   "libcompositor.pdb"
 )

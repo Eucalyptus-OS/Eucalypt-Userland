@@ -4,9 +4,9 @@
 		"/home/gavin/repos/Eucalypt-Userland/libs/build/cmake_install.cmake",
 		"/home/gavin/repos/Eucalypt-Userland/libs/build/libc/cmake_install.cmake",
 		"/home/gavin/repos/Eucalypt-Userland/libs/build/display/cmake_install.cmake",
-		"/home/gavin/repos/Eucalypt-Userland/libs/build/wm/cmake_install.cmake",
 		"/home/gavin/repos/Eucalypt-Userland/libs/build/cursor/cmake_install.cmake",
-		"/home/gavin/repos/Eucalypt-Userland/libs/build/compositor/cmake_install.cmake"
+		"/home/gavin/repos/Eucalypt-Userland/libs/build/compositor/cmake_install.cmake",
+		"/home/gavin/repos/Eucalypt-Userland/libs/build/term/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

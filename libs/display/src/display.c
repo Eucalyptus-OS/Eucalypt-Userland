@@ -26,6 +26,11 @@ fb_error init_display() {
         return NULL_POINTER;
     if (fb_pitch == 0 || fb_width == 0 || fb_height == 0)
         return INVALID_DISPLAY_PARAMS;
+    for (uint32_t y = 0; y < fb_height; y++) {
+        for (uint32_t x = 0; x < fb_width; x++) {
+            put_pixel(x, y, 0);
+        }
+    }
     return OK;
 }
 

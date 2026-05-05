@@ -156,19 +156,6 @@ display/fast:
 .PHONY : display/fast
 
 #=============================================================================
-# Target rules for targets named wm
-
-# Build rule for target.
-wm: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm
-.PHONY : wm
-
-# fast build rule for target.
-wm/fast:
-	$(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/build
-.PHONY : wm/fast
-
-#=============================================================================
 # Target rules for targets named cursor
 
 # Build rule for target.
@@ -194,6 +181,19 @@ compositor/fast:
 	$(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/build
 .PHONY : compositor/fast
 
+#=============================================================================
+# Target rules for targets named term
+
+# Build rule for target.
+term: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term
+.PHONY : term
+
+# fast build rule for target.
+term/fast:
+	$(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/build
+.PHONY : term/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -207,7 +207,7 @@ help:
 	@echo "... cursor"
 	@echo "... display"
 	@echo "... libc"
-	@echo "... wm"
+	@echo "... term"
 .PHONY : help
 
 

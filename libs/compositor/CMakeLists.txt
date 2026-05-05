@@ -1,5 +1,6 @@
 add_library(compositor STATIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/compositor.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/font_renderer.c
 )
 
 target_compile_options(compositor PRIVATE

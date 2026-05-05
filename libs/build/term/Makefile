@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles /home/gavin/repos/Eucalypt-Userland/libs/build/wm//CMakeFiles/progress.marks
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm/all
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles /home/gavin/repos/Eucalypt-Userland/libs/build/term//CMakeFiles/progress.marks
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm/clean
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,12 +103,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm/preinstall
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm/preinstall
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -117,42 +117,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-wm/CMakeFiles/wm.dir/rule:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wm/CMakeFiles/wm.dir/rule
-.PHONY : wm/CMakeFiles/wm.dir/rule
+term/CMakeFiles/term.dir/rule:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 term/CMakeFiles/term.dir/rule
+.PHONY : term/CMakeFiles/term.dir/rule
 
 # Convenience name for target.
-wm: wm/CMakeFiles/wm.dir/rule
-.PHONY : wm
+term: term/CMakeFiles/term.dir/rule
+.PHONY : term
 
 # fast build rule for target.
-wm/fast:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/build
-.PHONY : wm/fast
+term/fast:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/build
+.PHONY : term/fast
 
-src/window.o: src/window.c.o
-.PHONY : src/window.o
+src/term.o: src/term.c.o
+.PHONY : src/term.o
 
 # target to build an object file
-src/window.c.o:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/src/window.c.o
-.PHONY : src/window.c.o
+src/term.c.o:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/src/term.c.o
+.PHONY : src/term.c.o
 
-src/window.i: src/window.c.i
-.PHONY : src/window.i
+src/term.i: src/term.c.i
+.PHONY : src/term.i
 
 # target to preprocess a source file
-src/window.c.i:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/src/window.c.i
-.PHONY : src/window.c.i
+src/term.c.i:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/src/term.c.i
+.PHONY : src/term.c.i
 
-src/window.s: src/window.c.s
-.PHONY : src/window.s
+src/term.s: src/term.c.s
+.PHONY : src/term.s
 
 # target to generate assembly for a file
-src/window.c.s:
-	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f wm/CMakeFiles/wm.dir/build.make wm/CMakeFiles/wm.dir/src/window.c.s
-.PHONY : src/window.c.s
+src/term.c.s:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f term/CMakeFiles/term.dir/build.make term/CMakeFiles/term.dir/src/term.c.s
+.PHONY : src/term.c.s
 
 # Help Target
 help:
@@ -162,10 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... wm"
-	@echo "... src/window.o"
-	@echo "... src/window.i"
-	@echo "... src/window.s"
+	@echo "... term"
+	@echo "... src/term.o"
+	@echo "... src/term.i"
+	@echo "... src/term.s"
 .PHONY : help
 
 

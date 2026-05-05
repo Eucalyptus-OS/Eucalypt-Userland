@@ -1,2 +1,2 @@
-/usr/bin/ar qc libcompositor.a CMakeFiles/compositor.dir/src/compositor.c.o
+/usr/bin/ar qc libcompositor.a CMakeFiles/compositor.dir/src/compositor.c.o CMakeFiles/compositor.dir/src/font_renderer.c.o
 /usr/bin/ranlib libcompositor.a

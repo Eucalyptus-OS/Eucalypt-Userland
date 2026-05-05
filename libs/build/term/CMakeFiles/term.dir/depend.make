@@ -1,2 +1,2 @@
-# Empty dependencies file for wm.
+# Empty dependencies file for term.
 # This may be replaced when dependencies are built.

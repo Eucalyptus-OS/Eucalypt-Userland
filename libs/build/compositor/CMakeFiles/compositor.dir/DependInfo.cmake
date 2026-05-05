@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gavin/repos/Eucalypt-Userland/libs/compositor/src/compositor.c" "compositor/CMakeFiles/compositor.dir/src/compositor.c.o" "gcc" "compositor/CMakeFiles/compositor.dir/src/compositor.c.o.d"
+  "/home/gavin/repos/Eucalypt-Userland/libs/compositor/src/font_renderer.c" "compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o" "gcc" "compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

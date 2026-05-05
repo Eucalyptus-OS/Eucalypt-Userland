@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/gavin/repos/Eucalypt-Userland/libs/wm/src/window.c" "wm/CMakeFiles/wm.dir/src/window.c.o" "gcc" "wm/CMakeFiles/wm.dir/src/window.c.o.d"
+  "/home/gavin/repos/Eucalypt-Userland/libs/term/src/term.c" "term/CMakeFiles/term.dir/src/term.c.o" "gcc" "term/CMakeFiles/term.dir/src/term.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

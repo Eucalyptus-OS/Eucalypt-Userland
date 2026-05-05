@@ -154,6 +154,30 @@ src/compositor.c.s:
 	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/src/compositor.c.s
 .PHONY : src/compositor.c.s
 
+src/font_renderer.o: src/font_renderer.c.o
+.PHONY : src/font_renderer.o
+
+# target to build an object file
+src/font_renderer.c.o:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o
+.PHONY : src/font_renderer.c.o
+
+src/font_renderer.i: src/font_renderer.c.i
+.PHONY : src/font_renderer.i
+
+# target to preprocess a source file
+src/font_renderer.c.i:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/src/font_renderer.c.i
+.PHONY : src/font_renderer.c.i
+
+src/font_renderer.s: src/font_renderer.c.s
+.PHONY : src/font_renderer.s
+
+# target to generate assembly for a file
+src/font_renderer.c.s:
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build && $(MAKE) $(MAKESILENT) -f compositor/CMakeFiles/compositor.dir/build.make compositor/CMakeFiles/compositor.dir/src/font_renderer.c.s
+.PHONY : src/font_renderer.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -166,6 +190,9 @@ help:
 	@echo "... src/compositor.o"
 	@echo "... src/compositor.i"
 	@echo "... src/compositor.s"
+	@echo "... src/font_renderer.o"
+	@echo "... src/font_renderer.i"
+	@echo "... src/font_renderer.s"
 .PHONY : help
 
 

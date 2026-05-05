@@ -86,17 +86,33 @@ compositor/CMakeFiles/compositor.dir/src/compositor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compositor.dir/src/compositor.c.s"
 	cd /home/gavin/repos/Eucalypt-Userland/libs/build/compositor && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gavin/repos/Eucalypt-Userland/libs/compositor/src/compositor.c -o CMakeFiles/compositor.dir/src/compositor.c.s
 
+compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o: compositor/CMakeFiles/compositor.dir/flags.make
+compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o: /home/gavin/repos/Eucalypt-Userland/libs/compositor/src/font_renderer.c
+compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o: compositor/CMakeFiles/compositor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o"
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build/compositor && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o -MF CMakeFiles/compositor.dir/src/font_renderer.c.o.d -o CMakeFiles/compositor.dir/src/font_renderer.c.o -c /home/gavin/repos/Eucalypt-Userland/libs/compositor/src/font_renderer.c
+
+compositor/CMakeFiles/compositor.dir/src/font_renderer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/compositor.dir/src/font_renderer.c.i"
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build/compositor && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gavin/repos/Eucalypt-Userland/libs/compositor/src/font_renderer.c > CMakeFiles/compositor.dir/src/font_renderer.c.i
+
+compositor/CMakeFiles/compositor.dir/src/font_renderer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/compositor.dir/src/font_renderer.c.s"
+	cd /home/gavin/repos/Eucalypt-Userland/libs/build/compositor && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gavin/repos/Eucalypt-Userland/libs/compositor/src/font_renderer.c -o CMakeFiles/compositor.dir/src/font_renderer.c.s
+
 # Object files for target compositor
 compositor_OBJECTS = \
-"CMakeFiles/compositor.dir/src/compositor.c.o"
+"CMakeFiles/compositor.dir/src/compositor.c.o" \
+"CMakeFiles/compositor.dir/src/font_renderer.c.o"
 
 # External object files for target compositor
 compositor_EXTERNAL_OBJECTS =
 
 compositor/libcompositor.a: compositor/CMakeFiles/compositor.dir/src/compositor.c.o
+compositor/libcompositor.a: compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o
 compositor/libcompositor.a: compositor/CMakeFiles/compositor.dir/build.make
 compositor/libcompositor.a: compositor/CMakeFiles/compositor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libcompositor.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gavin/repos/Eucalypt-Userland/libs/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcompositor.a"
 	cd /home/gavin/repos/Eucalypt-Userland/libs/build/compositor && $(CMAKE_COMMAND) -P CMakeFiles/compositor.dir/cmake_clean_target.cmake
 	cd /home/gavin/repos/Eucalypt-Userland/libs/build/compositor && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/compositor.dir/link.txt --verbose=$(VERBOSE)
 

@@ -9,3 +9,11 @@ compositor/CMakeFiles/compositor.dir/src/compositor.c.o
  /home/gavin/repos/Eucalypt-Userland/libs/libc/include/stdlib.h
  /home/gavin/repos/Eucalypt-Userland/libs/compositor/include/compositor.h
 
+compositor/CMakeFiles/compositor.dir/src/font_renderer.c.o
+ /home/gavin/repos/Eucalypt-Userland/libs/compositor/src/font_renderer.c
+ /home/gavin/repos/Eucalypt-Userland/libs/libc/include/stddef.h
+ /home/gavin/repos/Eucalypt-Userland/libs/libc/include/stdint.h
+ /home/gavin/repos/Eucalypt-Userland/libs/libc/include/syscalls.h
+ /home/gavin/repos/Eucalypt-Userland/libs/libc/include/vfs.h
+ /home/gavin/repos/Eucalypt-Userland/libs/compositor/include/compositor.h
+
